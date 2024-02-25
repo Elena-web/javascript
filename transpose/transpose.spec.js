@@ -64,7 +64,6 @@ describe('Transpose', () => {
     ];
     expect(transpose(input)).toEqual(expected);
   });
-
   test('second line longer than first line', () => {
     const input = ['The first line.', 'The second line.'];
     const expected = [
@@ -123,7 +122,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  test('rectangle', () => {
+ test('rectangle', () => {
     const input = ['FRACTURE', 'OUTLINED', 'BLOOMING', 'SEPTETTE'];
     const expected = [
       'FOBS',
@@ -138,7 +137,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  test('triangle', () => {
+   test('triangle', () => {
     const input = ['T', 'EE', 'AAA', 'SSSS', 'EEEEE', 'RRRRRR'];
     const expected = [
       'TEASER',
@@ -164,7 +163,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  test('many lines', () => {
+ test('many lines', () => {
     const input = [
       'Chor. Two households, both alike in dignity,',
       'In fair Verona, where we lay our scene,',
