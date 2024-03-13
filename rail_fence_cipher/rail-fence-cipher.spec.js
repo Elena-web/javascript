@@ -1,5 +1,4 @@
 import { encode, decode } from './rail-fence-cipher';
-
 describe('Rail Fence Cipher', () => {
   describe('encode', () => {
     test('encode with two rails', () => {
