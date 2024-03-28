@@ -3,8 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export function age (planet, sec = 1000000000) {
-  let yearPlanet = {
+export function age(planet, sec = 1000000000) {
+  const yearPlanet = {
     mercury: 0.2408467,
     venus: 0.61519726,
     earth: 1.00,
@@ -12,9 +12,9 @@ export function age (planet, sec = 1000000000) {
     jupiter: 11.862615,
     saturn: 29.447498,
     uranus: 84.016846,
-    neptune: 164.79132
+    neptune: 164.79132,
   };
   const earth1 = 31557600;
-    let res = sec / (yearPlanet[planet] * earth1);
-    return parseFloat(res.toFixed(2));
+  const res = sec / (yearPlanet[planet] * earth1);
+  return parseFloat(res.toFixed(2));
 }
