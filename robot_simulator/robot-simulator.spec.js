@@ -19,7 +19,7 @@ describe('Robot', () => {
       expect(robot.bearing).toEqual('north');
     });
 
-/*    test('facing east', () => {
+    test('facing east', () => {
       const robot = new Robot();
       robot.place({ direction: 'east', x: 0, y: 0 });
 
@@ -231,6 +231,6 @@ describe('Robot', () => {
 
       expect(robot3.coordinates).toEqual([11, 5]);
       expect(robot3.bearing).toEqual('north');
-    });*/
+    });
   });
 });
