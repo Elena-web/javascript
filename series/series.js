@@ -4,34 +4,32 @@
 
 export class Series {
   constructor(series) {
-    this._series = series;
+    this.series = series;
   }
 
   slices(sliceLength) {
-    if(this._series.length === 0) {
+    if (this.series.length === 0) {
       throw new Error('series cannot be empty');
     }
-    if(this._series.length < sliceLength) {
+    if (this.series.length < sliceLength) {
       throw new Error('slice length cannot be greater than series length');
     }
-    if(sliceLength === 0) {
+    if (sliceLength === 0) {
       throw new Error('slice length cannot be zero');
     }
-    if(sliceLength < 0) {
+    if (sliceLength < 0) {
       throw new Error('slice length cannot be negative');
     }
 
-    let arr = [];
+    const arr = [];
 
-    for(let i = 0; i <= this._series.length - sliceLength; i++) {
-      let arr1 = []; 
-      for(let j = 0; j < sliceLength; j++) {
-          arr1.push(parseInt(this._series.substring(i + j, i + j + 1)));
+    for (let i = 0; i <= this.series.length - sliceLength; i += 1) {
+      const arr1 = [];
+      for (let j = 0; j < sliceLength; j += 1) {
+        arr1.push(parseInt(this.series.substring(i + j, i + j + 1), 10));
       }
       arr.push(arr1);
-  }
-
-  return arr;
+    }
+    return arr;
   }
 }
-
