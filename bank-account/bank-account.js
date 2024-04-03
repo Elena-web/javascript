@@ -3,61 +3,59 @@
 //
 
 export class BankAccount {
- 
-  constructor(name, balance = 0) {    
+  constructor(name, balance = 0) {
     this.name = name;
-    this._balance = balance;
-    this._isOpen = false;
+    this.Balance = balance;
+    this.IsOpen = false;
   }
 
   open() {
-    if(this._isOpen) {
+    if (this.IsOpen) {
       throw new ValueError();
     }
-    this._isOpen = true;
-    this._balance = 0;
+    this.IsOpen = true;
+    this.Balance = 0;
   }
 
   close() {
-    if(this._isOpen == false) {
+    if (this.IsOpen === false) {
       throw new ValueError();
     }
-    this._balance = 0;
-    this._isOpen = false;
+    this.Balance = 0;
+    this.IsOpen = false;
   }
 
   deposit(num) {
-    if(this._isOpen == false) {
+    if (this.IsOpen === false) {
       throw new ValueError();
     }
-    
-    if (this._isOpen) {
-      if(num >= 0) {
-      this._balance += num;
-    } else {
-      throw new ValueError();
+    if (this.IsOpen) {
+      if (num >= 0) {
+        this.Balance += num;
+      } else {
+        throw new ValueError();
+      }
     }
   }
-}
 
-withdraw(num) {
-  if(this._isOpen == false || num < 0 || this._balance < num) {
-    throw new ValueError();
+  withdraw(num) {
+    if (this.IsOpen === false || num < 0 || this.Balance < num) {
+      throw new ValueError();
+    }
+    this.Balance -= num;
   }
-  this._balance -= num;
-}
 
   get balance() {
-    if(this._isOpen == false) {
+    if (this.IsOpen === false) {
       throw new ValueError();
     }
-    return this._balance;
+    return this.Balance;
   }
 }
 
 export class ValueError extends Error {
   constructor() {
-      super('Bank account error');
-      this.name = 'ValueError';
+    super('Bank account error');
+    this.name = 'ValueError';
   }
 }
