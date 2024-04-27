@@ -7,7 +7,7 @@ export const transpose = (arr) => {
   // Заменяю пробелы на '+'
   const arrWithPlus = [];
   for (let i = 0; i < arr.length; i += 1) {
-    const str = arr[i].replace(/\s/g, '+');
+    const str = arr[i].split(' ').join('+');
     arrWithPlus.push(str);
   }
   const transposedArr = [];
@@ -31,7 +31,7 @@ export const transpose = (arr) => {
   }
   // Заменяю '+' with spaces
   for (let i = 0; i < transposedArr.length; i += 1) {
-    transposedArr[i] = transposedArr[i].replace(/\+/g, ' ');
+    transposedArr[i] = transposedArr[i].split('+').join(' ');
   }
   return transposedArr;
 };
